@@ -4,31 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Covid Prediction App</title>
 </head>
 
 <body>
-
     <div style="color:blue">
         <form action="{{ url_for('predict')}}" method="post">
-            <h2>COVID Prediction App</h2>
+            <h1 style="color:antiquewhite; font-size:50px">COVID Predictor</h1>
             <h3>Any Cough Symptoms?</h3>
-            <input id="first" name="Cough_symptoms" type="number ">
+
+	    <select id="fuel" name="Cough_symptoms">
+  	        <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
             <h3>Any Fever?</h3>
-            <input id="first" name="Fever" type="number ">
+	    <select id="fuel" name="Fever">
+  	        <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
             <h3>Any Sore Throat Symptoms?</h3>
-            <input id="first" name="Sore_throat" type="number ">
+	    <select id="fuel" name="Sore_throat">
+  	        <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
             <h3>Any Shortness of Breath?</h3>
-            <input id="first" name="Shortness_of_breath" type="number ">
+	    <select id="fuel" name="Shortness_of_breath">
+  	        <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
             <h3>Any Headache?</h3>
-            <input id="first" name="Headache" type="number ">
-            <h3>Any Known Contact1?</h3>
-            <input id="first" name="kc1" type="number ">
-            <h3>Any Known Contact2?</h3>
-            <input id="first" name="kc2" type="number ">
+	    <select id="fuel" name="Headache">
+  	        <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <h3>Any Known Contact with COVID confirmed patient?</h3>
+	    <select id="fuel" name="kc1">
+  	        <option value=1>Yes</option>
+                <option value=0>No</option>
+            </select>
+
+            <h3>Any recent visit to COVID affected Countries?</h3>
+	    <select id="fuel" name="kc2">
+  	        <option value=0>Yes</option>
+                <option value=1>No</option>
+            </select>
+
             <br><br><button id="sub" type="submit ">Predict</button>
             <br>
-
 
 
 
@@ -36,7 +63,7 @@
 
 
 
-        <br><br><h3>{{ prediction_text }}<h3>
+        <br><br><h2>{{ prediction_output }}<h2>
     </div>
 
 
@@ -44,11 +71,11 @@
 
     <style>
         body {
-            background-color: lightslategray;
+	    background-color: darkgoldenrod;
             text-align: center;
             padding: 0px;
         }
-        
+
         #research {
             font-size: 18px;
             width: 100px;
@@ -111,7 +138,7 @@
         }
         
         #sub {
-            width: 120px;
+            width: 200px;
             height: 43px;
             text-align: center;
             border-radius: 14px;
